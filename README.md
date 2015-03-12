@@ -47,7 +47,8 @@ skeemas.use(skeemasMarkdownValidation);
 describe('API Documentation -', function() {
     it('main documentation should have correct JSON', function() {
         // Validate your markdown
-        skeemas.validateMarkdown('./docs.md');
+        var validator = skeemas();
+        validator.validateMarkdown('./docs.md');
     });
 });
 ```
@@ -67,7 +68,8 @@ skeemas.use(skeemasMarkdownValidation);
 // Use any test harness, validateMarkdown just throws errors on invalid json
 describe('API Documentation -', function() {
     // Get an array containing test details for each json code block
-    var tests = skeemas.markdownTests('./docs.md');
+    var validator = skeemas(),
+        tests = validator.markdownTests('./docs.md');
 
     tests.forEach(function(test) {
         // Create a test case for each schema-linked json block
