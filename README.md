@@ -52,6 +52,8 @@ describe('API Documentation -', function() {
 });
 ```
 
+For more examples look at the docs in our [tests](tests/docs).
+
 
 ## Running Independent Code Block Validations
 If you use `skeemas.validateMarkdown` then an error will be thrown on the first case of invalid json. If you would prefer to see all the errors you have the option of running a test for each code block yourself:
