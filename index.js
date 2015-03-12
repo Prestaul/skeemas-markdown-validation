@@ -36,10 +36,8 @@ module.exports = function(protoValidator) {
 		if(!(file && typeof file === 'string')) throw new Error('skeemas.markdownTests called without a file');
 
 		var validator = this,
-			callingPath = path.dirname(module.parent.filename),
-			fileResolved = path.resolve(callingPath, file),
-			filePath = path.dirname(fileResolved),
-			markdown = fs.readFileSync(fileResolved).toString();
+			filePath = path.dirname(file),
+			markdown = fs.readFileSync(file).toString();
 
 		// Given a char offset in the file find the line number
 		function lineNumFromOffset(offset) {
@@ -69,7 +67,7 @@ module.exports = function(protoValidator) {
 
 			// Verify that it was valid
 			if(!result.valid)
-				throw new Error('Failed validation against schema /' + test.schema.id + ' (' + file + ':' + test.json.line + '):\n' + result.errors[0].message + ' @ ' + result.errors[0].context);
+				throw new Error('Failed validation against schema ' + test.schema.path + ' (' + file + ':' + test.json.line + '):\n' + result.errors[0].message + ' @ ' + result.errors[0].context);
 
 			// If we made it here then this block was validated
 		}

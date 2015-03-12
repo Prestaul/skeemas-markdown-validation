@@ -18,7 +18,7 @@ From within your markdown files you can provide relative links to schemas above 
 ## Creating Foos
 `POST /foos`
 
-Request ([see the new foo schema](schemas/foo-new.schema.js)):
+Request ([see the new foo schema](tests/schemas/foo-new.schema.js)):
 ```json
 {
     "fooName": "johnson",
@@ -26,7 +26,7 @@ Request ([see the new foo schema](schemas/foo-new.schema.js)):
 }
 ```
 
-200 Response ([see the foo schema](schemas/foo.schema.js)):
+200 Response ([see the foo schema](tests/schemas/foo.schema.js)):
 ```json
 {
     "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
