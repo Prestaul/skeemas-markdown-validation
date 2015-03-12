@@ -1,0 +1,34 @@
+{
+  "name": "skeemas-markdown-validation",
+  "version": "0.0.0",
+  "description": "JSON-Schema validation for json code blocks in your markdown files",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --R dot tests/",
+    "lint": "jshint ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Prestaul/skeemas-markdown-validation.git"
+  },
+  "keywords": [
+    "json-schema",
+    "markdown",
+    "validation",
+    "tests"
+  ],
+  "author": "Matt Dunlap <mpdunlap@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Prestaul/skeemas-markdown-validation/issues"
+  },
+  "homepage": "https://github.com/Prestaul/skeemas-markdown-validation",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "jshint": "^2.6.0",
+    "mocha": "^2.1.0"
+  },
+  "peerDependencies": {
+    "skeemas": ">=1.1.4 <2"
+  }
+}
