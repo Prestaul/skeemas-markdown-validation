@@ -21,6 +21,18 @@ describe('Markdown validation', function() {
 		it('should validate multiple json blocks', function() {
 			validator.validateMarkdown(__dirname + '/docs/valid-two-blocks.md');
 		});
+
+		it('should invalidate a single json block', function() {
+			assert.throws(function() {
+				validator.validateMarkdown(__dirname + '/docs/invalid-one-block.md');
+			});
+		});
+
+		it('should invalidate multiple json blocks', function() {
+			assert.throws(function() {
+				validator.validateMarkdown(__dirname + '/docs/invalid-two-blocks.md');
+			});
+		});
 	});
 
 
@@ -38,6 +50,38 @@ describe('Markdown validation', function() {
 			assert(validator.validate(tests, '/test-list').valid)
 			assert.lengthOf(tests, 2);
 		});
+
+		describe('test instance', function() {
+			it('should invalidate a json block', function() {
+				var tests = validator.markdownTests(__dirname + '/docs/invalid-one-block.md');
+
+				assert.throws(function() {
+					tests[0].execute();
+				});
+			});
+
+			it('should invalidate one of multiple json blocks', function() {
+				var tests = validator.markdownTests(__dirname + '/docs/invalid-two-blocks.md');
+
+				tests[0].execute();
+
+				assert.throws(function() {
+					tests[1].execute();
+				});
+			});
+
+			it('should invalidate multiple json blocks', function() {
+				var tests = validator.markdownTests(__dirname + '/docs/invalid-two-blocks-two-errors.md');
+
+				assert.throws(function() {
+					tests[0].execute();
+				});
+
+				assert.throws(function() {
+					tests[1].execute();
+				});
+			});
+		})
 	});
 
 });

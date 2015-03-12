@@ -1,4 +1,4 @@
-# Two blocks, no errors
+# Two blocks, one error
 
 [the new foo schema](../schemas/foo-new.schema.js)
 ```json
@@ -17,6 +17,6 @@ Some other text:
 {
     "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
     "fooName": "johnson",
-    "fooAge": 35
+    "fooAge": -35
 }
 ```
