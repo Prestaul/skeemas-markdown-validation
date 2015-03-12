@@ -1,6 +1,6 @@
 {
   "name": "skeemas-markdown-validation",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "JSON-Schema validation for json code blocks in your markdown files",
   "main": "index.js",
   "scripts": {
