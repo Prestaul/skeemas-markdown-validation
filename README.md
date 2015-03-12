@@ -26,7 +26,7 @@ Request ([see the new foo schema](tests/schemas/foo-new.schema.js)):
 }
 ```
 
-200 Response ([see the foo schema](tests/schemas/foo.schema.js)):
+200 Response ([see the foo schema](tests/schemas/foo.schema.json)):
 ```json
 {
     "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",

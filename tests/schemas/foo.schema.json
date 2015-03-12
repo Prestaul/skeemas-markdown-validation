@@ -1,0 +1,14 @@
+{
+	"id": "/foo",
+	"describe": "A schema describing a \"foo\"",
+	"type": "object",
+	"extends": {
+		"$ref": "/foo-new"
+	},
+	"properties": {
+		"id": {
+			"type": "string",
+			"required": true
+		}
+	}
+}
