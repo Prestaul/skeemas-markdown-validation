@@ -34,6 +34,20 @@ Request ([see the new foo schema](tests/schemas/foo-new.schema.js)):
     "fooAge": 35
 }
 ```
+
+## Array Docs
+You can also document arrays using the "array-continuation" syntax ([see the foo-list schema](tests/schemas/foo-list.schema.json)):
+```json
+[{
+    "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+    "fooName": "johnson",
+    "fooAge": 35
+}, {
+    "...": "Additional foos..."
+}]
+```
+
+Objects with a single property named `...` will be removed from arrays before validation.
 </pre>
 
 Add the plugin to `skeemas` and then validate your markdown files:
