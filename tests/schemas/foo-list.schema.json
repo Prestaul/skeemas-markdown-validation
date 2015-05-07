@@ -1,0 +1,8 @@
+{
+	"id": "/foo-list",
+	"describe": "A schema describing a list of \"foos\"",
+	"type": "array",
+	"items": {
+		"$ref": "/foo"
+	}
+}

@@ -8,6 +8,7 @@ var validator = skeemas();
 
 validator
 	.addRef(require('./schemas/foo-new.schema'))
+	.addRef(require('./schemas/foo.schema'))
 	.addRef(require('./schemas/test.schema'))
 	.addRef(require('./schemas/test-list.schema'));
 
@@ -20,6 +21,14 @@ describe('Markdown validation', function() {
 
 		it('should validate multiple json blocks', function() {
 			validator.validateMarkdown(__dirname + '/docs/valid-two-blocks.md');
+		});
+
+		it('should validate json with array continuation', function() {
+			validator.validateMarkdown(__dirname + '/docs/valid-array-continuation.md');
+		});
+
+		it('should validate json with empty array', function() {
+			validator.validateMarkdown(__dirname + '/docs/valid-empty-array.md');
 		});
 
 		it('should invalidate a single json block', function() {
