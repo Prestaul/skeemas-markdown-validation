@@ -87,7 +87,7 @@ describe('API Documentation -', function() {
 
     tests.forEach(function(test) {
         // Create a test case for each schema-linked json block
-        it('docs.md:' + test.json.line, test.execute);
+        it('docs.md:' + test.json.line, test.execute.bind(test));
     });
 });
 ```

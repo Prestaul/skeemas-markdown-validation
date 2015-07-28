@@ -5,7 +5,7 @@ var path = require('path'),
 // Recursively remove array continuation objects (...) from an array in json docs
 function cleanArray(array) {
 	// If the last item in array has a "..." prop then remove it
-	if(array.length && ('...' in array[array.length - 1])) array.pop();
+	if(array.length && ('...' in Object(array[array.length - 1]))) array.pop();
 
 	array.forEach(clean);
 
